@@ -1,0 +1,254 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.development-container {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+}
+
+.success-message {
+    background: #d4edda;
+    color: #155724;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+    border: 1px solid #c3e6cb;
+}
+
+.success-icon {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.success-message p {
+    margin: 0;
+    font-size: 1.1em;
+    font-weight: 500;
+}
+
+.development-header {
+    margin-bottom: 40px;
+}
+
+.development-header .icon {
+    font-size: 4em;
+    margin-bottom: 20px;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.development-header h1 {
+    color: #333;
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.development-header h2 {
+    color: #667eea;
+    font-size: 1.5em;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+.development-content {
+    text-align: left;
+    margin-bottom: 40px;
+}
+
+.main-message {
+    font-size: 1.3em;
+    color: #333;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.sub-message {
+    font-size: 1.1em;
+    color: #666;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.features-preview {
+    background: #f8f9fa;
+    padding: 25px;
+    border-radius: 12px;
+    margin-bottom: 25px;
+}
+
+.features-preview h3 {
+    color: #333;
+    font-size: 1.2em;
+    margin-bottom: 15px;
+}
+
+.features-preview ul {
+    list-style: none;
+    padding: 0;
+}
+
+.features-preview li {
+    color: #555;
+    padding: 8px 0;
+    font-size: 1em;
+    display: flex;
+    align-items: center;
+}
+
+.timeline {
+    background: #e3f2fd;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.timeline h3 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.launch-date {
+    color: #667eea;
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+.development-actions {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.btn-primary, .btn-secondary {
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    font-size: 16px;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+}
+
+.btn-secondary {
+    background: #f8f9fa;
+    color: #667eea;
+    border: 2px solid #667eea;
+}
+
+.btn-secondary:hover {
+    background: #667eea;
+    color: white;
+    transform: translateY(-2px);
+}
+
+.notify-section {
+    background: #fff3cd;
+    padding: 25px;
+    border-radius: 12px;
+    border: 1px solid #ffeaa7;
+}
+
+.notify-section h3 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.notify-section p {
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.notify-form {
+    margin: 0;
+}
+
+.notify-btn {
+    background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+    color: #333;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.notify-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(252, 182, 159, 0.4);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .development-container {
+        padding: 30px 20px;
+        margin: 20px;
+    }
+    
+    .development-header h1 {
+        font-size: 2em;
+    }
+    
+    .development-header h2 {
+        font-size: 1.3em;
+    }
+    
+    .development-actions {
+        flex-direction: column;
+    }
+    
+    .btn-primary, .btn-secondary {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .development-header .icon {
+        font-size: 3em;
+    }
+    
+    .development-header h1 {
+        font-size: 1.8em;
+    }
+    
+    .main-message {
+        font-size: 1.1em;
+    }
+}

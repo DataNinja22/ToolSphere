@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Location</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/profile.css') }}">
+</head>
+<body>
+    <div class="profile-container">
+        <div class="profile-header">
+            <h1>Update Location</h1>
+            <p>Change your city, state, and country</p>
+        </div>
+        
+        {% if error %}
+        <div class="flash-message error-message">
+            {{ error }}
+        </div>
+        {% endif %}
+        
+        <form action="/perform_location_update" method="POST">
+            <div class="profile-info">
+                <div class="info-row">
+                    <span class="info-label">Current Location:</span>
+                    <span class="info-value">{{ user.city }}, {{ user.state }}, {{ user.country }}</span>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="city">City:</label>
+                <input type="text" id="city" name="city" placeholder="Enter city" value="{{ user.city }}" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="state">State:</label>
+                <input type="text" id="state" name="state" placeholder="Enter state" value="{{ user.state }}" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="country">Country:</label>
+                <select id="country" name="country" required>
+                    <option value="">Select your country</option>
+                    <option value="US" {% if user.country == 'US' %}selected{% endif %}>United States</option>
+                    <option value="CA" {% if user.country == 'CA' %}selected{% endif %}>Canada</option>
+                    <option value="UK" {% if user.country == 'UK' %}selected{% endif %}>United Kingdom</option>
+                    <option value="AU" {% if user.country == 'AU' %}selected{% endif %}>Australia</option>
+                    <option value="DE" {% if user.country == 'DE' %}selected{% endif %}>Germany</option>
+                    <option value="FR" {% if user.country == 'FR' %}selected{% endif %}>France</option>
+                    <option value="IN" {% if user.country == 'IN' %}selected{% endif %}>India</option>
+                    <option value="CN" {% if user.country == 'CN' %}selected{% endif %}>China</option>
+                    <option value="JP" {% if user.country == 'JP' %}selected{% endif %}>Japan</option>
+                    <option value="BR" {% if user.country == 'BR' %}selected{% endif %}>Brazil</option>
+                    <option value="MX" {% if user.country == 'MX' %}selected{% endif %}>Mexico</option>
+                    <option value="IT" {% if user.country == 'IT' %}selected{% endif %}>Italy</option>
+                    <option value="ES" {% if user.country == 'ES' %}selected{% endif %}>Spain</option>
+                    <option value="RU" {% if user.country == 'RU' %}selected{% endif %}>Russia</option>
+                    <option value="ZA" {% if user.country == 'ZA' %}selected{% endif %}>South Africa</option>
+                    <option value="other" {% if user.country == 'other' %}selected{% endif %}>Other</option>
+                </select>
+            </div>
+            
+            <div class="profile-actions">
+                <button type="submit" class="profile-btn">Update Location</button>
+            </div>
+        </form>
+        
+        <div class="profile-actions">
+            <form action="/profile" method="GET">
+                <button type="submit" class="profile-btn secondary-btn">← Back to Profile</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/profile.css') }}">
+</head>
+<body>
+    <div class="profile-container">
+        {% if message %}
+        <div class="flash-message success-message">
+            {{ message }}
+        </div>
+        {% endif %}
+        
+        <div class="profile-header">
+            <h1>Your Profile</h1>
+            <p>View and update your information</p>
+        </div>
+        
+        <div class="profile-info">
+            <div class="info-row">
+                <span class="info-label">Full Name:</span>
+                <span class="info-value">{{ user.name }}</span>
+            </div>
+            
+            <div class="info-row">
+                <span class="info-label">Email:</span>
+                <span class="info-value">{{ user.email }}</span>
+            </div>
+            
+            <div class="info-row">
+                <span class="info-label">Mobile Number:</span>
+                <span class="info-value">{{ user.mobile }}</span>
+            </div>
+            
+            <div class="info-row">
+                <span class="info-label">City:</span>
+                <span class="info-value">{{ user.city }}</span>
+            </div>
+            
+            <div class="info-row">
+                <span class="info-label">State:</span>
+                <span class="info-value">{{ user.state }}</span>
+            </div>
+            
+            <div class="info-row">
+                <span class="info-label">Country:</span>
+                <span class="info-value">{{ user.country }}</span>
+            </div>
+        </div>
+        
+        <div class="profile-actions">
+            <form action="/dashboard" method="GET">
+                <button type="submit" class="profile-btn">← Back to Dashboard</button>
+            </form>
+            
+            <form action="/update_phone" method="GET">
+                <button type="submit" class="profile-btn">Update Phone Number</button>
+            </form>
+            
+            <form action="/update_password" method="GET">
+                <button type="submit" class="profile-btn">Update Password</button>
+            </form>
+            
+            <form action="/update_location" method="GET">
+                <button type="submit" class="profile-btn">Update City, State & Country</button>
+            </form>
+        </div>
+        
+        <div class="logout-link">
+            <a href="/logout">Logout</a>
+        </div>
+    </div>
+</body>
+</html>

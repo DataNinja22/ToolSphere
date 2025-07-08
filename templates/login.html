@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+</head>
+<body>
+    <div class="login-container">
+        {% if message %}
+        <div class="flash-message">
+            {{ message }}
+        </div>
+        {% endif %}
+        
+        {% if error %}
+        <div class="flash-message error-message">
+            {{ error }}
+            {% if "Email not found" in error %}
+                <br><br><a href="/register" style="color: #667eea; font-weight: 600; text-decoration: none;">Click here to register →</a>
+            {% endif %}
+        </div>
+        {% endif %}
+        
+        <div class="login-header">
+            <h1>Welcome Back</h1>
+            <p>Please sign in to your account</p>
+        </div>
+        
+        <form action="/perform_login" method="POST">
+            <div class="form-group">
+                <label for="username">Email</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password" required>
+            </div>
+            
+            <button type="submit" class="login-btn">Sign In</button>
+            
+            <div class="forgot-password">
+                <a href="/forgot-password">Forgot your password?</a>
+            </div>
+        </form>
+        
+        <div class="signup-link">
+            <p>Not a member? <a href="/register">Register here</a></p>
+        </div>
+    </div>
+</body>
+</html>

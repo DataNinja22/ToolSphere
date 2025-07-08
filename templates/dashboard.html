@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+</head>
+<body>
+    <div class="dashboard-header">
+        <h1 class="dashboard-title">Dashboard</h1>
+        <div class="nav-links">
+            <a href="/profile" class="profile-btn">My Profile</a>
+            <a href="/logout" class="profile-btn">Logout</a>
+        </div>
+    </div>
+    
+    <div class="dashboard-content">
+        <div class="feature-card">
+            <div class="feature-icon">�</div>
+            <h3>Text Summarizer</h3>
+            <p>Transform lengthy documents into concise, meaningful summaries using advanced AI technology.</p>
+            <a href="/text-summarizer" class="feature-btn">Try Text Summarizer</a>
+        </div>
+        
+        <div class="feature-card">
+            <div class="feature-icon">🌍</div>
+            <h3>Language Translator</h3>
+            <p>Break down language barriers with our advanced translation tool supporting multiple languages.</p>
+            <a href="/translator" class="feature-btn">Try Translator</a>
+        </div>
+        
+        <div class="feature-card">
+            <div class="feature-icon">💼</div>
+            <h3>LinkedIn Post Generator</h3>
+            <p>Create engaging LinkedIn posts that boost your professional presence and build connections.</p>
+            <a href="/linkedin-generator" class="feature-btn">Try LinkedIn Generator</a>
+        </div>
+        
+        <div class="feature-card">
+            <div class="feature-icon">📊</div>
+            <h3>Data Analysis Tool</h3>
+            <p>Unlock insights from your data with our powerful AI-powered analytics and reporting tool.</p>
+            <a href="/data-analysis" class="feature-btn">Try Data Analysis</a>
+        </div>
+    </div>
+</body>
+</html>

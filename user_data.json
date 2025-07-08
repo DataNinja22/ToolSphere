@@ -1,0 +1,10 @@
+{
+    "abc@gmail.com": {
+        "password": "12345",
+        "name": "swift",
+        "mobile": "987654321",
+        "city": "hello",
+        "state": "west bengal",
+        "country": "IN"
+    }
+}

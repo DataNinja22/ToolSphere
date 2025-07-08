@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ tool_name }} - Under Development</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/under_development.css') }}">
+</head>
+<body>
+    <div class="development-container">
+        {% if message %}
+        <div class="success-message">
+            <div class="success-icon">✅</div>
+            <p>{{ message }}</p>
+        </div>
+        {% endif %}
+        
+        <div class="development-header">
+            <div class="icon">🚧</div>
+            <h1>{{ tool_name }}</h1>
+            <h2>Under Development</h2>
+        </div>
+        
+        <div class="development-content">
+            <p class="main-message">We're working hard to bring you this amazing feature!</p>
+            <p class="sub-message">The <strong>{{ tool_name }}</strong> is currently under development and will be available soon.</p>
+            
+            <div class="features-preview">
+                <h3>What to expect:</h3>
+                <ul>
+                    {% if tool_name == "Text Summarizer" %}
+                    <li>📄 Upload documents and get instant summaries</li>
+                    <li>🎯 Customizable summary length and focus</li>
+                    <li>💡 Key points extraction</li>
+                    <li>📋 Export summaries in various formats</li>
+                    {% elif tool_name == "Language Translator" %}
+                    <li>🌐 Support for 100+ languages</li>
+                    <li>🎯 Context-aware translations</li>
+                    <li>🗣️ Text and voice translation</li>
+                    <li>📱 Real-time translation</li>
+                    {% elif tool_name == "LinkedIn Post Generator" %}
+                    <li>✍️ AI-powered content creation</li>
+                    <li>🎯 Industry-specific templates</li>
+                    <li>📈 Engagement optimization</li>
+                    <li>🕐 Scheduling and posting</li>
+                    {% elif tool_name == "Data Analysis Tool" %}
+                    <li>📊 Interactive data visualization</li>
+                    <li>🔍 Automated insights discovery</li>
+                    <li>📈 Trend analysis and forecasting</li>
+                    <li>📋 Comprehensive reporting</li>
+                    {% endif %}
+                </ul>
+            </div>
+            
+            <div class="timeline">
+                <h3>Expected Launch:</h3>
+                <p class="launch-date">Coming Soon - Q3 2025</p>
+            </div>
+        </div>
+        
+        <div class="development-actions">
+            <a href="/dashboard" class="btn-primary">← Back to Dashboard</a>
+            <a href="/profile" class="btn-secondary">My Profile</a>
+        </div>
+        
+        <div class="notify-section">
+            <h3>Get Notified</h3>
+            <p>Want to be the first to know when {{ tool_name }} is ready?</p>
+            <form action="/notify_me" method="POST" class="notify-form">
+                <input type="hidden" name="tool" value="{{ tool_name }}">
+                <button type="submit" class="notify-btn">Notify Me When Ready!</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,61 @@
+/* Content page styles for Privacy Policy and Terms of Service */
+.content-container {
+    max-width: 800px;
+    margin: 100px auto;
+    padding: 40px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.content-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.content-header h1 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.content-text {
+    line-height: 1.6;
+    color: #555;
+}
+
+.content-text h2 {
+    color: #333;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+.back-link {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.back-link a {
+    color: #667eea;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.back-link a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .content-container {
+        margin: 50px 20px;
+        padding: 30px 20px;
+    }
+    
+    .content-header h1 {
+        font-size: 1.8em;
+    }
+    
+    .content-text h2 {
+        font-size: 1.3em;
+    }
+}
